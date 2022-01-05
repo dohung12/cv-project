@@ -85,7 +85,7 @@ class Experience extends Component {
   handleEdit(event) {
     const id = event.currentTarget.parentElement.dataset.id;
     const { workDateStart, workDateEnd, companyName, positionTitle, mainTask } =
-      this.state.educations.filter((element) => element.id === id)[0];
+      this.state.experiences.filter((element) => element.id === id)[0];
     this.setState({
       editId: id,
       editMode: true,
