@@ -19,6 +19,7 @@ class Education extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleEdit = this.handleEdit.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   backToDefault() {
@@ -91,6 +92,13 @@ class Education extends Component {
     });
   }
 
+  handleDelete(event) {
+    const id = event.currentTarget.parentElement.dataset.id;
+    this.setState({
+      educations: this.state.educations.filter((element) => element.id !== id),
+    });
+  }
+
   render() {
     return (
       <article>
@@ -128,6 +136,7 @@ class Education extends Component {
         <DisplayEducation
           education={this.state.educations}
           onEdit={this.handleEdit}
+          onDel={this.handleDelete}
         />
       </article>
     );

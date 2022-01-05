@@ -1,6 +1,6 @@
 import React from "react";
 
-const DisplayEducation = ({ education, onEdit }) => {
+const DisplayEducation = ({ education, onEdit, onDel }) => {
   const displayList = [];
   for (let edu in education) {
     const { id, dateStart, dateEnd, titleOfStudy, schoolName } = education[edu];
@@ -13,7 +13,7 @@ const DisplayEducation = ({ education, onEdit }) => {
         <h4 className="titleOfStudy">{titleOfStudy}</h4>
         <p className="schoolName">{schoolName}</p>
         <i className="fas fa-edit" onClick={onEdit}></i>
-        <i className="fas fa-trash"></i>
+        <i className="fas fa-trash" onClick={onDel}></i>
       </div>
     );
   }
