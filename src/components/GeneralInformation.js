@@ -72,24 +72,28 @@ class GeneralInformation extends Component {
       <article>
         <form onSubmit={this.handleSubmit}>
           <InputField
+            label="Name"
             name="name"
             type="text"
             value={this.state.name}
             onChange={this.handleInputChange}
           />
           <InputField
+            label="Title"
             name="title"
             type="text"
             value={this.state.title}
             onChange={this.handleInputChange}
           />
           <InputField
+            label="Tel"
             name="tel"
             type="tel"
             value={this.state.tel}
             onChange={this.handleInputChange}
           />
           <InputField
+            label="Email"
             name="email"
             type="email"
             value={this.state.email}
