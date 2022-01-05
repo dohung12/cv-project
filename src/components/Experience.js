@@ -139,6 +139,7 @@ class Experience extends Component {
     ];
     return (
       <article>
+        <h2>Experience</h2>
         <Form
           fields={inputFields}
           onChange={this.handleInputChange}

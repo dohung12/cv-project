@@ -128,6 +128,7 @@ class Education extends Component {
     ];
     return (
       <article>
+        <h2>Education</h2>
         <Form
           fields={inputFields}
           onChange={this.handleInputChange}

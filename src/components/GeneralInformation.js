@@ -78,6 +78,7 @@ class GeneralInformation extends Component {
 
     return (
       <article>
+        <h2>Personal Information</h2>
         <Form
           fields={inputFields}
           onChange={this.handleInputChange}
