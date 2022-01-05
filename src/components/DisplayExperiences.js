@@ -1,5 +1,5 @@
 import React from "react";
-
+import reactDom from "react-dom";
 const DisplayExperiences = ({ experiences, onEdit, onDel }) => {
   const displayList = [];
   for (const exp of experiences) {
@@ -20,10 +20,15 @@ const DisplayExperiences = ({ experiences, onEdit, onDel }) => {
         <h4 className="company-name"> {companyName} </h4>
         <p className="pos-title"> {positionTitle} </p>
         <p className="main-task"> {mainTask} </p>
+        <i className="fas fa-edit" onClick={onEdit}></i>
+        <i className="fas fa-trash" onClick={onDel}></i>
       </div>
     );
   }
-  return <React.Fragment>{displayList}</React.Fragment>;
+  return reactDom.createPortal(
+    <React.Fragment>{displayList}</React.Fragment>,
+    document.getElementById("display-cv")
+  );
 };
 
 export default DisplayExperiences;

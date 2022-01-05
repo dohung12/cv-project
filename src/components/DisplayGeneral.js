@@ -1,8 +1,9 @@
 import React from "react";
+import reactDom from "react-dom";
 
 const DisplayGeneral = ({ info, onEdit, onDel }) => {
   const { name, title, tel, email } = info;
-  return (
+  return reactDom.createPortal(
     <React.Fragment>
       <h1>Name: {name}</h1>
       <p>Title: {title}</p>
@@ -11,7 +12,8 @@ const DisplayGeneral = ({ info, onEdit, onDel }) => {
 
       <i className="fas fa-edit" onClick={onEdit}></i>
       <i className="fas fa-trash" onClick={onDel}></i>
-    </React.Fragment>
+    </React.Fragment>,
+    document.getElementById("display-cv")
   );
 };
 

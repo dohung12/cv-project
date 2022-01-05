@@ -1,4 +1,5 @@
 import React from "react";
+import reactDom from "react-dom";
 
 const DisplayEducation = ({ education, onEdit, onDel }) => {
   const displayList = [];
@@ -17,6 +18,9 @@ const DisplayEducation = ({ education, onEdit, onDel }) => {
       </div>
     );
   }
-  return <React.Fragment>{displayList}</React.Fragment>;
+  return reactDom.createPortal(
+    <React.Fragment>{displayList}</React.Fragment>,
+    document.getElementById("display-cv")
+  );
 };
 export default DisplayEducation;
