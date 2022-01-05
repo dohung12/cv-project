@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DisplayGeneral from "./displayGeneral";
+import DisplayGeneral from "./DisplayGeneral";
 import Form from "./Form";
 
 class GeneralInformation extends Component {
@@ -85,11 +85,11 @@ class GeneralInformation extends Component {
           onSubmit={this.handleSubmit}
         />
 
-        <div>
-          <DisplayGeneral {...this.state.infos} />
-          <i className="fas fa-edit" onClick={this.hanldeEdit}></i>
-          <i className="fas fa-trash" onClick={this.handleDel}></i>
-        </div>
+        <DisplayGeneral
+          info={this.state.infos}
+          onEdit={this.hanldeEdit}
+          onDel={this.handleDel}
+        />
       </article>
     );
   }

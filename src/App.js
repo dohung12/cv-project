@@ -1,11 +1,11 @@
-import GeneralInformation from "./components/GeneralInformation";
+import General from "./components/General";
 import Education from "./components/Education";
 import Experience from "./components/Experience";
 
 function App() {
   return (
     <div className="App">
-      <GeneralInformation />
+      <General />
       <Experience />
       <Education />
     </div>
