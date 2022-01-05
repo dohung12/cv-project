@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import DisplayGeneral from "./displayGeneral";
-import InputField from "./InputField";
+import Form from "./Form";
+
 class GeneralInformation extends Component {
   constructor(props) {
     super(props);
@@ -68,40 +69,21 @@ class GeneralInformation extends Component {
   }
 
   render() {
+    const inputFields = [
+      { label: "Name", type: "text", name: "name", value: this.state.name },
+      { label: "Title", type: "text", name: "title", value: this.state.title },
+      { label: "Tel", type: "tel", name: "tel", value: this.state.tel },
+      { label: "Email", type: "email", name: "email", value: this.state.email },
+    ];
+
     return (
       <article>
-        <form onSubmit={this.handleSubmit}>
-          <InputField
-            label="Name"
-            name="name"
-            type="text"
-            value={this.state.name}
-            onChange={this.handleInputChange}
-          />
-          <InputField
-            label="Title"
-            name="title"
-            type="text"
-            value={this.state.title}
-            onChange={this.handleInputChange}
-          />
-          <InputField
-            label="Tel"
-            name="tel"
-            type="tel"
-            value={this.state.tel}
-            onChange={this.handleInputChange}
-          />
-          <InputField
-            label="Email"
-            name="email"
-            type="email"
-            value={this.state.email}
-            onChange={this.handleInputChange}
-          />
+        <Form
+          fields={inputFields}
+          onChange={this.handleInputChange}
+          onSubmit={this.handleSubmit}
+        />
 
-          <button type="submit">Submit</button>
-        </form>
         <div>
           <DisplayGeneral {...this.state.infos} />
           <i className="fas fa-edit" onClick={this.hanldeEdit}></i>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import DisplayEducation from "./displayEducation";
-import InputField from "./InputField";
 import uniqid from "uniqid";
+import Form from "./Form";
 
 class Education extends Component {
   constructor(props) {
@@ -100,39 +100,40 @@ class Education extends Component {
   }
 
   render() {
+    const inputFields = [
+      {
+        label: "From",
+        type: "number",
+        name: "dateStart",
+        value: this.state.dateStart,
+      },
+      {
+        label: "To",
+        type: "number",
+        name: "dateEnd",
+        value: this.state.dateEnd,
+      },
+      {
+        label: "School name",
+        type: "text",
+        name: "schoolName",
+        value: this.state.schoolName,
+      },
+      {
+        label: "Title of Study",
+        type: "text",
+        name: "titleOfStudy",
+        value: this.state.titleOfStudy,
+      },
+    ];
     return (
       <article>
-        <form onSubmit={this.handleSubmit}>
-          <InputField
-            label="From year"
-            type="number"
-            name="dateStart"
-            value={this.state.dateStart}
-            onChange={this.handleInputChange}
-          />
-          <InputField
-            label="To year"
-            type="number"
-            name="dateEnd"
-            value={this.state.dateEnd}
-            onChange={this.handleInputChange}
-          />
-          <InputField
-            label="school name"
-            type="text"
-            name="schoolName"
-            value={this.state.schoolName}
-            onChange={this.handleInputChange}
-          />
-          <InputField
-            label="title of study"
-            type="text"
-            name="titleOfStudy"
-            value={this.state.titleOfStudy}
-            onChange={this.handleInputChange}
-          />
-          <button type="submit">Submit</button>
-        </form>
+        <Form
+          fields={inputFields}
+          onChange={this.handleInputChange}
+          onSubmit={this.handleSubmit}
+        />
+
         <DisplayEducation
           education={this.state.educations}
           onEdit={this.handleEdit}
