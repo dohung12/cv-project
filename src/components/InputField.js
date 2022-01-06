@@ -1,15 +1,15 @@
 import React from "react";
 
-const InputField = (props) => {
+const InputField = ({ name, label, type, value, onChange }) => {
   return (
     <React.Fragment>
-      <label htmlFor={props.name}>{props.label}: </label>
+      <label htmlFor={name}>{label}: </label>
       <input
-        type={props.type}
-        name={props.name}
-        id={props.name}
-        value={props.value}
-        onChange={props.onChange}
+        type={type}
+        name={name}
+        id={name}
+        value={value}
+        onChange={onChange}
       />
     </React.Fragment>
   );
