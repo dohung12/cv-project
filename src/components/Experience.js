@@ -113,35 +113,40 @@ class Experience extends Component {
         type: "number",
         name: "workDateStart",
         value: this.state.workDateStart,
+        placeholder: "From: YYYY-MM",
       },
       {
         label: "To",
         type: "number",
         name: "workDateEnd",
         value: this.state.workDateEnd,
+        placeholder: "To: YYYY-MM or Present",
       },
       {
         label: "Company name",
         type: "text",
         name: "companyName",
         value: this.state.companyName,
+        placeholder: "Company's name",
       },
       {
         label: "Position title",
         type: "text",
         name: "positionTitle",
         value: this.state.positionTitle,
+        placeholder: "Position",
       },
       {
         label: "Main task of your job",
         type: "text",
         name: "mainTask",
         value: this.state.mainTask,
+        placeholder: "Further description or archivements",
       },
     ];
     return (
       <article>
-        <h2>Experience</h2>
+        <h4>Experience</h4>
         <Form
           fields={inputFields}
           onChange={this.handleInputChange}

@@ -70,15 +70,39 @@ class GeneralInformation extends Component {
 
   render() {
     const inputFields = [
-      { label: "Name", type: "text", name: "name", value: this.state.name },
-      { label: "Title", type: "text", name: "title", value: this.state.title },
-      { label: "Tel", type: "tel", name: "tel", value: this.state.tel },
-      { label: "Email", type: "email", name: "email", value: this.state.email },
+      {
+        label: "Name",
+        type: "text",
+        name: "name",
+        value: this.state.name,
+        placeholder: "Name",
+      },
+      {
+        label: "Title",
+        type: "text",
+        name: "title",
+        value: this.state.title,
+        placeholder: "Current title",
+      },
+      {
+        label: "Tel",
+        type: "tel",
+        name: "tel",
+        value: this.state.tel,
+        placeholder: "Phone number",
+      },
+      {
+        label: "Email",
+        type: "email",
+        name: "email",
+        value: this.state.email,
+        placeholder: "Email",
+      },
     ];
 
     return (
       <article>
-        <h2>Personal Information</h2>
+        <h4>Personal Information</h4>
         <Form
           fields={inputFields}
           onChange={this.handleInputChange}

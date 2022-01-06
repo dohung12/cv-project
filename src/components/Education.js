@@ -103,32 +103,36 @@ class Education extends Component {
     const inputFields = [
       {
         label: "From",
-        type: "number",
+        type: "text",
         name: "dateStart",
         value: this.state.dateStart,
+        placeholder: "From: YYYY-MM",
       },
       {
         label: "To",
-        type: "number",
+        type: "text",
         name: "dateEnd",
         value: this.state.dateEnd,
+        placeholder: "To: YYYY-MM or Present",
       },
       {
         label: "School name",
         type: "text",
         name: "schoolName",
         value: this.state.schoolName,
+        placeholder: "University's name",
       },
       {
         label: "Title of Study",
         type: "text",
         name: "titleOfStudy",
         value: this.state.titleOfStudy,
+        placeholder: "Title of Study",
       },
     ];
     return (
       <article>
-        <h2>Education</h2>
+        <h4>Education</h4>
         <Form
           fields={inputFields}
           onChange={this.handleInputChange}
