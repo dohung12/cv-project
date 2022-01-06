@@ -6,7 +6,7 @@ class GeneralInformation extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      onEdit: false,
+      editFlag: false,
       infos: {},
       name: "",
       title: "",
@@ -83,6 +83,7 @@ class GeneralInformation extends Component {
           fields={inputFields}
           onChange={this.handleInputChange}
           onSubmit={this.handleSubmit}
+          editFlag={this.state.editFlag}
         />
 
         <DisplayGeneral

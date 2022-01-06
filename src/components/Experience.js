@@ -7,7 +7,7 @@ class Experience extends Component {
     super(props);
     this.state = {
       editId: "",
-      editMode: false,
+      editFlag: false,
       workDateStart: "",
       workDateEnd: "",
       companyName: "",
@@ -26,7 +26,7 @@ class Experience extends Component {
   backToDefault() {
     this.setState({
       editId: "",
-      editMode: false,
+      editFlag: false,
       workDateStart: "",
       workDateEnd: "",
       companyName: "",
@@ -47,7 +47,7 @@ class Experience extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if (!this.state.editMode) {
+    if (!this.state.editFlag) {
       this.setState({
         experiences: [
           ...this.state.experiences,
@@ -62,7 +62,7 @@ class Experience extends Component {
         ],
       });
       this.backToDefault();
-    } else if (this.state.editMode) {
+    } else if (this.state.editFlag) {
       this.setState({
         experiences: this.state.experiences.map((element) => {
           if (element.id === this.state.editId) {
@@ -88,7 +88,7 @@ class Experience extends Component {
       this.state.experiences.filter((element) => element.id === id)[0];
     this.setState({
       editId: id,
-      editMode: true,
+      editFlag: true,
       workDateStart: workDateStart,
       workDateEnd: workDateEnd,
       companyName: companyName,
@@ -100,7 +100,9 @@ class Experience extends Component {
   handleDelete(event) {
     const id = event.currentTarget.parentElement.dataset.id;
     this.setState({
-      experiences: this.state.educations.filter((element) => element.id !== id),
+      experiences: this.state.experiences.filter(
+        (element) => element.id !== id
+      ),
     });
   }
 
@@ -144,6 +146,7 @@ class Experience extends Component {
           fields={inputFields}
           onChange={this.handleInputChange}
           onSubmit={this.handleSubmit}
+          editFlag={this.state.editFlag}
         />
 
         <DisplayExperiences

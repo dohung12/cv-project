@@ -8,7 +8,7 @@ class Education extends Component {
     super(props);
     this.state = {
       editId: "",
-      editMode: false,
+      editFlag: false,
       dateStart: "",
       dateEnd: "",
       titleOfStudy: "",
@@ -24,7 +24,7 @@ class Education extends Component {
 
   backToDefault() {
     this.setState({
-      editMode: false,
+      editFlag: false,
       editId: "",
       dateStart: "",
       dateEnd: "",
@@ -45,7 +45,7 @@ class Education extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    if (!this.state.editMode) {
+    if (!this.state.editFlag) {
       this.setState({
         educations: [
           ...this.state.educations,
@@ -59,7 +59,7 @@ class Education extends Component {
         ],
       });
       this.backToDefault();
-    } else if (this.state.editMode) {
+    } else if (this.state.editFlag) {
       this.setState({
         educations: this.state.educations.map((element) => {
           if (element.id === this.state.editId) {
@@ -84,7 +84,7 @@ class Education extends Component {
       this.state.educations.filter((element) => element.id === id)[0];
     this.setState({
       editId: id,
-      editMode: true,
+      editFlag: true,
       dateStart: dateStart,
       dateEnd: dateEnd,
       titleOfStudy: titleOfStudy,
@@ -133,6 +133,7 @@ class Education extends Component {
           fields={inputFields}
           onChange={this.handleInputChange}
           onSubmit={this.handleSubmit}
+          editFlag={this.state.editFlag}
         />
 
         <DisplayEducation

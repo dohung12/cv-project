@@ -1,6 +1,6 @@
 import InputField from "./InputField";
 
-const Form = ({ fields, onChange, onSubmit }) => {
+const Form = ({ fields, onChange, onSubmit, editFlag }) => {
   const inputFields = [];
 
   for (const field of fields) {
@@ -21,7 +21,7 @@ const Form = ({ fields, onChange, onSubmit }) => {
   return (
     <form onSubmit={onSubmit}>
       {inputFields}
-      <button type="submit">Submit</button>
+      <button type="submit">{editFlag ? "Edit" : "Add"}</button>
     </form>
   );
 };
