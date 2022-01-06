@@ -1,0 +1,28 @@
+.experience form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.experience form input {
+  margin: 0;
+}
+
+.workDateStart {
+  grid-column: 1/2;
+}
+.workDateEnd {
+  grid-column: 2/3;
+}
+
+.companyName {
+  grid-column: 1/3;
+}
+
+.positionTitle {
+  grid-column: 1/3;
+}
+
+.mainTask {
+  grid-column: 1/3;
+}

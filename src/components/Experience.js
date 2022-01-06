@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import uniqid from "uniqid";
 import DisplayExperiences from "./DisplayExperiences";
 import Form from "./Form";
+
+import "./Experience.css";
 class Experience extends Component {
   constructor(props) {
     super(props);
@@ -110,14 +112,14 @@ class Experience extends Component {
     const inputFields = [
       {
         label: "From",
-        type: "number",
+        type: "text",
         name: "workDateStart",
         value: this.state.workDateStart,
         placeholder: "From: YYYY-MM",
       },
       {
         label: "To",
-        type: "number",
+        type: "text",
         name: "workDateEnd",
         value: this.state.workDateEnd,
         placeholder: "To: YYYY-MM or Present",
@@ -145,7 +147,7 @@ class Experience extends Component {
       },
     ];
     return (
-      <article>
+      <article className="experience">
         <h4>Experience</h4>
         <Form
           fields={inputFields}
