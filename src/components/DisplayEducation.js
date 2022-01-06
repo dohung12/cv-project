@@ -7,20 +7,23 @@ const DisplayEducation = ({ education, onEdit, onDel }) => {
     const { id, dateStart, dateEnd, titleOfStudy, schoolName } = education[edu];
 
     displayList.push(
-      <div key={id} data-id={id}>
+      <div key={id} data-id={id} className="edu">
         <p className="dateOfStudy">
           {dateStart} - {dateEnd}
         </p>
         <h4 className="titleOfStudy">{titleOfStudy}</h4>
         <p className="schoolName">{schoolName}</p>
-        <i className="fas fa-edit" onClick={onEdit}></i>
-        <i className="fas fa-trash" onClick={onDel}></i>
+
+        <div className="btn-container">
+          <i className="fas fa-edit" onClick={onEdit}></i>
+          <i className="fas fa-trash" onClick={onDel}></i>
+        </div>
       </div>
     );
   }
   return reactDom.createPortal(
     <React.Fragment>{displayList}</React.Fragment>,
-    document.getElementById("display-cv")
+    document.querySelector(".display-education")
   );
 };
 export default DisplayEducation;

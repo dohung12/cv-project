@@ -5,15 +5,17 @@ const DisplayGeneral = ({ info, onEdit, onDel }) => {
   const { name, title, tel, email } = info;
   return reactDom.createPortal(
     <React.Fragment>
-      <h1>Name: {name}</h1>
-      <p>Title: {title}</p>
+      <h1> {name}</h1>
+      <p>{title}</p>
       <p>Tel: {tel}</p>
       <p> Email: {email} </p>
 
-      <i className="fas fa-edit" onClick={onEdit}></i>
-      <i className="fas fa-trash" onClick={onDel}></i>
+      <div className="btn-container">
+        <i className="fas fa-edit" onClick={onEdit}></i>
+        <i className="fas fa-trash" onClick={onDel}></i>
+      </div>
     </React.Fragment>,
-    document.getElementById("display-cv")
+    document.querySelector(".display-general")
   );
 };
 

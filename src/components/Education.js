@@ -80,7 +80,7 @@ class Education extends Component {
   }
 
   handleEdit(event) {
-    const id = event.currentTarget.parentElement.dataset.id;
+    const id = event.currentTarget.parentElement.parentElement.dataset.id;
     const { dateStart, dateEnd, titleOfStudy, schoolName } =
       this.state.educations.filter((element) => element.id === id)[0];
     this.setState({
@@ -94,7 +94,7 @@ class Education extends Component {
   }
 
   handleDelete(event) {
-    const id = event.currentTarget.parentElement.dataset.id;
+    const id = event.currentTarget.parentElement.parentElement.dataset.id;
     this.setState({
       educations: this.state.educations.filter((element) => element.id !== id),
     });

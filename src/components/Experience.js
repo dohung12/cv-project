@@ -85,7 +85,7 @@ class Experience extends Component {
   }
 
   handleEdit(event) {
-    const id = event.currentTarget.parentElement.dataset.id;
+    const id = event.currentTarget.parentElement.parentElement.dataset.id;
     const { workDateStart, workDateEnd, companyName, positionTitle, mainTask } =
       this.state.experiences.filter((element) => element.id === id)[0];
     this.setState({
@@ -100,7 +100,7 @@ class Experience extends Component {
   }
 
   handleDelete(event) {
-    const id = event.currentTarget.parentElement.dataset.id;
+    const id = event.currentTarget.parentElement.parentElement.dataset.id;
     this.setState({
       experiences: this.state.experiences.filter(
         (element) => element.id !== id

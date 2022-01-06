@@ -13,21 +13,24 @@ const DisplayExperiences = ({ experiences, onEdit, onDel }) => {
     } = exp;
 
     displayList.push(
-      <div key={id} data-id={id}>
+      <div key={id} data-id={id} className="exp">
         <p className="workTime">
           {workDateStart} - {workDateEnd}
         </p>
         <h4 className="company-name"> {companyName} </h4>
         <p className="pos-title"> {positionTitle} </p>
         <p className="main-task"> {mainTask} </p>
-        <i className="fas fa-edit" onClick={onEdit}></i>
-        <i className="fas fa-trash" onClick={onDel}></i>
+
+        <div className="btn-container">
+          <i className="fas fa-edit" onClick={onEdit}></i>
+          <i className="fas fa-trash" onClick={onDel}></i>
+        </div>
       </div>
     );
   }
   return reactDom.createPortal(
     <React.Fragment>{displayList}</React.Fragment>,
-    document.getElementById("display-cv")
+    document.querySelector(".display-experience")
   );
 };
 
