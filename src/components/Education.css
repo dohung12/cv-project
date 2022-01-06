@@ -1,0 +1,24 @@
+.education form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.education form input {
+  margin: 0;
+}
+
+.dateStart {
+  grid-column: 1/2;
+}
+.dateEnd {
+  grid-column: 2/3;
+}
+
+.schoolName {
+  grid-column: 1/3;
+}
+
+.titleOfStudy {
+  grid-column: 1/3;
+}

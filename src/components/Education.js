@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import DisplayEducation from "./DisplayEducation";
 import uniqid from "uniqid";
 import Form from "./Form";
+import "./Education.css";
 
 class Education extends Component {
   constructor(props) {
@@ -131,7 +132,7 @@ class Education extends Component {
       },
     ];
     return (
-      <article>
+      <article className="education">
         <h4>Education</h4>
         <Form
           fields={inputFields}
