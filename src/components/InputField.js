@@ -1,17 +1,18 @@
 import React from "react";
-
-const InputField = ({ name, label, type, value, onChange }) => {
+import "./InputField.css";
+const InputField = ({ name, label, type, value, placeholder, onChange }) => {
   return (
-    <React.Fragment>
+    <div className={name}>
       <label htmlFor={name}>{label}: </label>
       <input
         type={type}
         name={name}
         id={name}
         value={value}
+        placeholder={placeholder}
         onChange={onChange}
       />
-    </React.Fragment>
+    </div>
   );
 };
 

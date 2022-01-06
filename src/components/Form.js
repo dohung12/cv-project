@@ -1,10 +1,10 @@
 import InputField from "./InputField";
-
+import "./Form.css";
 const Form = ({ fields, onChange, onSubmit, editFlag }) => {
   const inputFields = [];
 
   for (const field of fields) {
-    const { label, type, name, value } = field;
+    const { label, type, name, value, placeholder } = field;
 
     inputFields.push(
       <InputField
@@ -13,6 +13,7 @@ const Form = ({ fields, onChange, onSubmit, editFlag }) => {
         type={type}
         name={name}
         value={value}
+        placeholder={placeholder}
         onChange={onChange}
       />
     );
