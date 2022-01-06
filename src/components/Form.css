@@ -1,0 +1,19 @@
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+form button {
+  border-radius: 10px;
+  padding: 0.67rem 1.4rem;
+  font-size: 1rem;
+  background-color: #333;
+  color: #f7f8f8;
+}
+
+form button:hover {
+  background-color: #666;
+}
+
+.general button {
+  width: 50%;
+}

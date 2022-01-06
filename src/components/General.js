@@ -101,7 +101,7 @@ class GeneralInformation extends Component {
     ];
 
     return (
-      <article>
+      <article className="general">
         <h4>Personal Information</h4>
         <Form
           fields={inputFields}
